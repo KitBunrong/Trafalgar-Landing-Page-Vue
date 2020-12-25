@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-main>
+      <Navigation />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Navigation from "./components/Navigation";
 export default {
-  name: 'app',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
-</script>
+    Navigation,
+  },
 
+  data: () => ({}),
+};
+</script>
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap");
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: "Mulish", sans-serif;
+}
+btn span {
+  font-size: 18px;
 }
 </style>
