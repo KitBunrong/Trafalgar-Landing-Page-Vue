@@ -51,9 +51,8 @@ export default {
   },
 };
 </script>
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap");
+<style lang="scss">
 #app {
-  font-family: "Mulish", sans-serif;
+  font-family: $body-font-family;
 }
 </style>
