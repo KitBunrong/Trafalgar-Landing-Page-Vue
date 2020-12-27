@@ -94,7 +94,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .logo {
   font-size: 24px;
   height: 41px;
@@ -104,7 +104,7 @@ export default {
 }
 .logo span {
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 700;
 }
 .item span {
   font-size: 18px;
