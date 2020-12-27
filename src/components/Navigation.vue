@@ -1,85 +1,59 @@
 <template>
   <div>
     <v-navigation-drawer v-model="drawer" app temporary>
-      <v-list>
-        <v-list-item-avatar></v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-title class="title">Trafalgar</v-list-item-title>
-        </v-list-item-content>
-      </v-list>
+      <a href="#" class="logo d-flex py-10 pl-4 align-center">
+        <v-btn class="mr-4" color="primary" rounded fab depressed small>
+          <span color="#fff">T</span>
+        </v-btn>
+        <span>Trafalgar</span>
+      </a>
       <v-divider />
-      <v-list dense>
+      <v-list>
         <v-list-item
           v-for="([icon, text, link], i) in items"
           :key="i"
           link
           @click="$vuetify.goTo(link)"
         >
-          <v-list-item-icon class="justify-center">
-            <v-icon>{{ icon }}</v-icon>
+          <v-list-item-icon>
+            <v-icon class="pl-2">{{ icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title class="subtitle-1">{{ text }}</v-list-item-title>
+            <v-list-item-title class="text-size">{{ text }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
     <v-app-bar elevate-on-scroll app height="80px" color="#fff">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" v-if="isXs">
-      </v-app-bar-nav-icon>
-
-      <div v-else class="container d-flex pa-0 align-center">
+      <div class="container d-flex align-center pa-0">
         <a href="#" class="logo d-flex align-center">
-          <v-btn
-            class="logo_btn mr-3"
-            color="primary"
-            rounded
-            fab
-            depressed
-            small
-          >
+          <v-btn class="mr-2" color="primary" rounded fab depressed small>
             <span color="#fff">T</span>
           </v-btn>
           <span>Trafalgar</span>
         </a>
         <v-spacer />
-        <div>
-          <v-btn
-            class="item text-capitalize"
-            text
-            @click="$vuetify.goTo('#hero')"
-          >
-            <span class="mr-1">Home</span>
-          </v-btn>
-          <v-btn
-            class="item text-capitalize"
-            text
-            @click="$vuetify.goTo('#doctor')"
-          >
-            <span class="mr-1">Find a docter</span>
-          </v-btn>
-          <v-btn
-            class="item text-capitalize"
-            text
-            @click="$vuetify.goTo('#app')"
-          >
-            <span class="mr-1">Apps</span>
-          </v-btn>
-          <v-btn
-            class="item text-capitalize"
-            text
-            @click="$vuetify.goTo('#testimonial')"
-          >
-            <span class="mr-1">Testimonials</span>
-          </v-btn>
-          <v-btn
-            class="item text-capitalize"
-            text
-            @click="$vuetify.goTo('#about')"
-          >
-            <span class="mr-1">About Us</span>
-          </v-btn>
+        <v-app-bar-nav-icon
+          class="mt-2"
+          @click.stop="drawer = !drawer"
+          v-if="isXs"
+        >
+        </v-app-bar-nav-icon>
+
+        <div v-else>
+          <v-list class="d-flex flex-row">
+            <v-list-item
+              v-for="([, text, link], i) in items"
+              :key="i"
+              link
+              @click="$vuetify.goTo(link)"
+            >
+              <v-list-item-title class="text-size font-weight-regular">{{
+                text
+              }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
         </div>
       </div>
     </v-app-bar>
@@ -93,7 +67,10 @@ export default {
     isXs: false,
     items: [
       ["mdi-home-outline", "Home", "#hero"],
-      ["mdi-home-outline", "Find a doctor", "#doctor"],
+      ["mdi-clipboard-search-outline", "Find a doctor", "#doctor"],
+      ["mdi-approximately-equal-box", "App", "#app"],
+      ["mdi-play-box-outline", "Testimonials", "#testimonials"],
+      ["mdi-account-supervisor-circle", "About Us", "about"],
     ],
   }),
   methods: {
@@ -127,9 +104,14 @@ export default {
 }
 .logo span {
   font-size: 26px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .item span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+}
+.text-size {
   font-size: 18px;
 }
 </style>
