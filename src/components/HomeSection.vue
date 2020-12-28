@@ -1,5 +1,5 @@
 <template>
-  <v-container class="home">
+  <v-container id="home">
     <div class="d-none d-lg-block">
       <img
         class="home-bg-top"
@@ -17,7 +17,14 @@
           Trafalgar provides progressive, and affordable healthcare, accessible
           on mobile and online for everyone
         </p>
-        <v-btn class="primary" flat rounded depressed large>
+        <v-btn
+          class="btn primary"
+          text
+          rounded
+          depressed
+          large
+          @click="$vuetify.goTo('#service')"
+        >
           <span>Consult today</span>
         </v-btn>
       </div>
@@ -37,13 +44,13 @@ export default {};
 </script>
 
 <style lang="scss">
-.home {
-  position: relative;
+#home {
+  margin-top: 40px;
 
   .home-bg-top {
     position: absolute;
-    left: -200px;
-    top: 10px;
+    left: -45px;
+    top: 40px;
   }
 
   .home-title {
@@ -62,7 +69,7 @@ export default {};
 }
 // *== If [device] is less than or equal to 960px
 @media only screen and (max-width: 960px) {
-  .home {
+  #home {
     padding: 20px 30px 0;
   }
 }
