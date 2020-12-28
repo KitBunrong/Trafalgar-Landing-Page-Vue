@@ -66,8 +66,8 @@ export default {
     drawer: null,
     isXs: false,
     items: [
-      ["mdi-home-outline", "Home", "#hero"],
-      ["mdi-clipboard-search-outline", "Find a doctor", "#doctor"],
+      ["mdi-home-outline", "Home", "#home"],
+      ["mdi-clipboard-search-outline", "Find a doctor", "#service"],
       ["mdi-approximately-equal-box", "App", "#app"],
       ["mdi-play-box-outline", "Testimonials", "#testimonials"],
       ["mdi-account-supervisor-circle", "About Us", "about"],

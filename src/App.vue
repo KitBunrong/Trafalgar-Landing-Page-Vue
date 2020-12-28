@@ -3,6 +3,7 @@
     <Navigation :color="color" :flat="flat" />
     <v-main>
       <Home />
+      <Service />
     </v-main>
   </v-app>
 </template>
@@ -10,6 +11,8 @@
 <script>
 import Navigation from "./components/Navigation";
 import Home from "./components/HomeSection";
+import Service from "./components/ServiceSection";
+
 export default {
   name: "App",
   data: () => ({
@@ -20,9 +23,10 @@ export default {
   components: {
     Navigation,
     Home,
+    Service,
   },
   created() {
-    const top = windowYOffset || 0;
+    const top = window.pageYOffset || 0;
     if (top <= 60) {
       this.color = "transparent";
       this.flat = true;
@@ -54,5 +58,21 @@ export default {
 <style lang="scss">
 #app {
   font-family: $body-font-family;
+  overflow: hidden;
+
+  .btn {
+    text-transform: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0px;
+
+    &:hover {
+      transform: scale(0.98);
+    }
+  }
+
+  v-main {
+    position: relative;
+  }
 }
 </style>
