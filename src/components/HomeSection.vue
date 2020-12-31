@@ -45,7 +45,7 @@ export default {};
 
 <style lang="scss">
 #home {
-  margin-top: 40px;
+  margin-top: 0px;
 
   .home-bg-top {
     position: absolute;

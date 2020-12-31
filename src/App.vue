@@ -1,9 +1,11 @@
 <template>
   <v-app>
     <Navigation :color="color" :flat="flat" />
-    <v-main>
+    <v-main style="padding: 0;">
       <Home />
       <Service />
+      <Healthcare />
+      <AppSec />
     </v-main>
   </v-app>
 </template>
@@ -12,6 +14,8 @@
 import Navigation from "./components/Navigation";
 import Home from "./components/HomeSection";
 import Service from "./components/ServiceSection";
+import Healthcare from "./components/HealthcareSection";
+import AppSec from "./components/AppSection";
 
 export default {
   name: "App",
@@ -24,6 +28,8 @@ export default {
     Navigation,
     Home,
     Service,
+    Healthcare,
+    AppSec,
   },
   created() {
     const top = window.pageYOffset || 0;
@@ -73,6 +79,15 @@ export default {
 
   v-main {
     position: relative;
+    padding: 10px;
+  }
+
+  .underline {
+    margin: 15px auto 30px 0;
+    width: 55px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: black;
   }
 }
 </style>

@@ -32,7 +32,7 @@
       </div>
     </v-row>
     <div class="service-btn">
-      <v-btn class="btn primary--text" rounded depressed outlined large>
+      <v-btn class="btn primary--text" rounded outlined large>
         <span>Learn more</span>
       </v-btn>
     </div>
